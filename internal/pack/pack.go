@@ -41,22 +41,17 @@ func NewBatteryPack(series int, parallel int, ambientTemp float64) *BatteryPack 
 	}
 }
 
-// StepPack simulates pack discharge with concurrent Goroutines across cells
+// StepPack simulates pack discharge with optimized high-performance cell stepping
 func (p *BatteryPack) StepPack(totalPackCurrent float64, dt float64) PackStatus {
 	p.mu.Lock()
 	defer p.mu.Unlock()
 
 	cellCurrent := totalPackCurrent / float64(p.ParallelCount)
 
-	var wg sync.WaitGroup
+	// High-performance cache-friendly zero-allocation cell evaluation
 	for _, c := range p.Cells {
-		wg.Add(1)
-		go func(target *cell.BatteryCell) {
-			defer wg.Done()
-			target.Step(cellCurrent, dt)
-		}(c)
+		c.Step(cellCurrent, dt)
 	}
-	wg.Wait()
 
 	// Compute aggregate metrics
 	totalV := 0.0
