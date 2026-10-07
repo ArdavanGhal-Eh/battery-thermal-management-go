@@ -3,6 +3,7 @@
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
+[![Persian Documentation](https://img.shields.io/badge/مستندات-فارسی-green.svg?style=for-the-badge)](README_FA.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Go Version](https://img.shields.io/badge/Go-1.22%2B-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
 [![Physics Model](https://img.shields.io/badge/Battery-2--RC_Thevenin_Bernardi-green.svg?style=for-the-badge)](https://github.com/ArdavanGhal-Eh/battery-thermal-management-go)
