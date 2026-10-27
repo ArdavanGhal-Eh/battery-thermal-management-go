@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 def simulate_and_plot_battery_pack():
     time_s = np.linspace(0, 600, 300)
-    
+
     # Pack average & max temperature curves
     t_ambient = 25.0
     t_avg = t_ambient + 18.0 * (1.0 - np.exp(-time_s / 180.0)) + 1.5 * np.sin(0.1 * time_s)
